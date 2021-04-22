@@ -70,15 +70,16 @@ public class LinkedList <T> {
     }
 
     public static void main(String[] args) {
+        // A linked list storing Integers
         LinkedList<Integer> list = new LinkedList<Integer>();
         assert list.isEmpty();
         assert list.size() == 0;
 
-        list.addFront(42);
+        list.addFront(100);
         assert !list.isEmpty();
         assert list.size() == 1;
 
-        assert list.removeFront() == 42;
+        assert list.removeFront() == 100;
         assert list.isEmpty();
         assert list.size() == 0;
 
@@ -88,6 +89,7 @@ public class LinkedList <T> {
         assert list.removeFront() == 24;
         assert list.isEmpty();
 
+        // A linked list storing Strings
         LinkedList<String> strList = new LinkedList<String>();
         assert strList.isEmpty();
         assert strList.size() == 0;

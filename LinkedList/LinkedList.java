@@ -88,19 +88,19 @@ public class LinkedList <T> {
         assert list.removeFront() == 24;
         assert list.isEmpty();
 
-        // LinkedList<String> strList = new LinkedList<String>();
-        // assert strList.isEmpty();
-        // assert strList.size() == 0;
+        LinkedList<String> strList = new LinkedList<String>();
+        assert strList.isEmpty();
+        assert strList.size() == 0;
 
-        // strList.addFront("Hello");
-        // strList.addFront("Hi");
-        // strList.addBack("World!");
-        // assert !strList.isEmpty();
-        // assert strList.size() == 3;
+        strList.addFront("Hello");
+        strList.addFront("Hi");
+        strList.addBack("World!");
+        assert !strList.isEmpty();
+        assert strList.size() == 3;
 
-        // assert strList.removeFront() == "Hi";
-        // assert !strList.isEmpty();
-        // assert strList.size() == 2;
+        assert strList.removeFront() == "Hi";
+        assert !strList.isEmpty();
+        assert strList.size() == 2;
 
         System.out.println("All tests completed.");
     }

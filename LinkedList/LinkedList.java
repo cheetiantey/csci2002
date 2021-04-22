@@ -86,7 +86,7 @@ public class LinkedList <T> {
         list.addBack(24);
         assert !list.isEmpty();
 
-        assert list.removeFront() == 24;
+        assert list.removeFront() == 24; 
         assert list.isEmpty();
 
         // A linked list storing Strings

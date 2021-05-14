@@ -1,11 +1,5 @@
-import java.util.function.Predicate;
-
 public class ArrayUtils {
 
-	// Returns the first occurrence of 'value' in the
-	// subrange a[lo,hi) of array 'a'. If 'value' occurs
-	// more than once, the index of the first
-	// (lowest-indexed) one is returned.
 	public static <T> int find(T[] a, int lo, int hi, T value) {
 
 		assert a != null;
@@ -22,8 +16,6 @@ public class ArrayUtils {
 		return find(a, 0, a.length, value);
 	}
 
-	// Returns the number of occurrences of 'value' in the
-	// subrange a[lo,hi).
 	public static <T> int count(T[] a, int lo, int hi, T value) {
 		int c = 0;
 		for (int i = lo; i < hi; i++)
@@ -36,9 +28,6 @@ public class ArrayUtils {
 		return count(a, 0, a.length, value);
 	}
 
-	// Returns the minimum element of the subrange a[lo,hi) of
-	// array 'a'. If the minimum value occurs more than once,
-	// the index of the first (lowest-indexed) one is returned.
 	public static <T extends Comparable<T>> int minElement(T[] a, int lo, int hi) {
 		
 		assert a != null;
@@ -57,9 +46,6 @@ public class ArrayUtils {
 		return minElement(a, 0, a.length);
 	}
 
-	// Returns the maximum element of the subrange a[lo,hi) of
-	// array 'a'. If the maximum value occurs more than once,
-	// the index of the first (lowest-indexed) one is returned.
 	public static <T extends Comparable<T>> int maxElement(T[] a, int lo, int hi) {
 		int maxIdx = lo;
 		for (int i = lo+1; i < hi; i++)
@@ -72,8 +58,6 @@ public class ArrayUtils {
 		return maxElement(a, 0, a.length);
 	}
 
-	// Returns the element of the first item in the given subrange
-	// that is greater than or equal to the given key.
 	public static <T extends Comparable<T>> int lowerBound(T[] a, int lo, int hi, T key) {
 
 		while (lo < hi) {
@@ -90,8 +74,6 @@ public class ArrayUtils {
 		return lowerBound(a, 0, a.length, key);
 	}
 
-	// Returns the element of the first item in the given subrange
-	// that is strictly greater than the given key.
 	public static <T extends Comparable<T>> int upperBound(T[] a, int lo, int hi, T key) {
 
 		while (lo < hi) {

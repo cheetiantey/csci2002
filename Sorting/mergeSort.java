@@ -1,22 +1,33 @@
 public class mergeSort {
-    public static <T extends Comparable<T>> void merge(T[] a, T[] aux, int lo, int mid, int hi) {
-        int i = lo;
-        int j = hi;
-        int j = lo;
-        if (i == mid) {
-            aux[k++] = a[i++];
-        } else if (j == hi) {
-            aux[k++] = a[i++];
-        } else if (a[i].compareTo(a[j]) <= 0) {
-            aux[k++] = a[i++];
-        } else {
-            aux[k++] = a[j++];
-        }
+	private static <T extends Comparable<T>> void merge(T[] a, T[] aux, int lo, int mid, int hi) {
+		
+		for (int i = lo, j = mid, k = lo; k < hi; k++) {
+			if (i == mid)
+				aux[k] = a[j++];
+			else if (j == hi)
+				aux[k] = a[i++];
+			else if (a[i].compareTo(a[j]) <= 0)
+				aux[k] = a[i++];
+			else
+				aux[k] = a[j++];
+		}
+		
+		for (int k = lo; k < hi; k++)
+			a[k] = aux[k];
+	}
 
-        for (i = lo; i < hi; i++) {
-            a[i] = aux[i];
-        }
-    }
-
-    public static <T extends Comparable<T>> void mergeSort(T[] a )
+	private static <T extends Comparable<T>> void Sort(T[] a, T[] aux, int lo, int hi) {
+		if (hi - lo == 1)
+			return;
+		int mid = lo + (hi - lo) / 2;
+		Sort(a, aux, lo, mid);
+		Sort(a, aux, mid, hi);
+		merge(a, aux, lo, mid, hi);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public static <T extends Comparable<T>> void Sort(T[] a) {
+		T[] aux = (T[])new Comparable[a.length];
+		Sort(a, aux, 0, a.length);
+	}
 }

@@ -16,18 +16,18 @@ public class mergeSort {
 			a[k] = aux[k];
 	}
 
-	private static <T extends Comparable<T>> void Sort(T[] a, T[] aux, int lo, int hi) {
+	private static <T extends Comparable<T>> void sort(T[] a, T[] aux, int lo, int hi) {
 		if (hi - lo == 1)
 			return;
 		int mid = lo + (hi - lo) / 2;
-		Sort(a, aux, lo, mid);
-		Sort(a, aux, mid, hi);
+		sort(a, aux, lo, mid);
+		sort(a, aux, mid, hi);
 		merge(a, aux, lo, mid, hi);
 	}
 	
 	@SuppressWarnings("unchecked")
-	public static <T extends Comparable<T>> void Sort(T[] a) {
+	public static <T extends Comparable<T>> void sort(T[] a) {
 		T[] aux = (T[])new Comparable[a.length];
-		Sort(a, aux, 0, a.length);
+		sort(a, aux, 0, a.length);
 	}
 }
